@@ -5,7 +5,7 @@
 
 - [데이터베이스](#데이터베이스)
   - [DB의 기본 기능](#db의-기본-기능)
-  - [DB 종류](#db-종류종류)
+  - [DB 종류](#db-종류)
 - [순서](#순서)
   - [문법 순서](#문법-순서)
   - [실행 순서](#실행-순서)
@@ -119,7 +119,16 @@ SELECT DISTINCT column1, column2, ...
 
 ### 2. 조건에 맞는 데이터 검색하기
 
-#### WHERE
+#### `IS NULL`
+
+NULL 체크
+
+```MySQL
+WHERE col IS NULL
+WHERE col IS NOT NULL
+```
+
+#### `WHERE`
 
 필터링하는데 사용된다. (조건문)
 
@@ -127,7 +136,7 @@ SELECT DISTINCT column1, column2, ...
 WHERE condition
 ```
 
-##### 연산자
+##### - 연산자
 
 - 비교 연산자 (=, >, >=, <, <=, <>)  
   <> 대신 !=도 사용 가능하다.  
@@ -140,7 +149,7 @@ WHERE condition
   WHERE NOT condition
   ```
 
-##### LIKE
+##### - `LIKE`
 
 패턴을 찾는다.
 
@@ -154,7 +163,7 @@ WHERE col LIKE 'a%'
 WHERE col NOT LIKE 'a%'
 ```
 
-##### IN
+##### - `IN`
 
 가능한 값을 여러개 지정한다. OR 한것과 같음.
 
@@ -163,7 +172,7 @@ WHERE col IN ('a', 'b')
 WHERE col NOT IN ('a', 'b')
 ```
 
-##### BETWEEN
+##### - `BETWEEN`
 
 특정 범위 사이
 
@@ -172,20 +181,11 @@ WHERE col BETWEEN 3 AND 5
 WHERE col NOT BETWEEN 3 AND 5
 ```
 
-#### IS NULL
-
-NULL 체크
-
-```MySQL
-WHERE col IS NULL
-WHERE col IS NOT NULL
-```
-
 ### 3. 보고싶은 데이터 요약하기
 
 ### 4. 데이터 순서 정렬하기
 
-#### ORDER BY
+#### `ORDER BY`
 
 - 오름차순 (Default) : ASC (ascending)
 - 내림차순 : DESC (descending)
@@ -195,7 +195,7 @@ ORDER BY price ASC
 ORDER BY price DESC
 ```
 
-#### LIMIT
+#### `LIMIT`
 
 ```MySQL
 LIMIT 10 -- 위에서부터 10개
