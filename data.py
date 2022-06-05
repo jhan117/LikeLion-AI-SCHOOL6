@@ -39,6 +39,7 @@ def save_json():
 # save_json()
 
 
+# 데이터프레임 만들기
 def make_dataframe():
     df_list = []
     for tier in tqdm(tier_list):
@@ -74,18 +75,23 @@ def make_dataframe():
 
 df = pd.read_csv('dataframe.csv')
 
-fig = px.scatter(df, x='pick_rate',
-                 y='ban_rate', color='position', animation_frame='tier', hover_data=['champion'], range_x=[-10, 60], range_y=[-10, 60])
-fig.show()
-
 # print(df.describe())
 
+# 데이터 특성을 위한 전처리
 # df_melt = df.melt(id_vars=['tier', 'champion', 'position'], value_vars=[
 #                   'win_rate', 'pick_rate', 'ban_rate'], var_name='rate_type', value_name='rate')
 
+# print(df_melt)
+
+# 데이터 특성을 위한 시각화
 # sns.boxplot(x='rate_type', y='rate', data=df_melt)
 # sns.violinplot(x='rate_type', y='rate', data=df_melt)
 # plt.ylim(-10, 110)
 # plt.axhline(y=0, color='r', linestyle=':', linewidth=1)
 # plt.axhline(y=100, color='r', linestyle=':', linewidth=1)
 # plt.show()
+
+# 분석을 위한 시각화
+fig = px.scatter(df, x='pick_rate',
+                 y='ban_rate', color='position', animation_frame='tier', hover_data=['champion'], range_x=[-10, 60], range_y=[-10, 60])
+fig.show()
