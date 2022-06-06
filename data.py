@@ -7,7 +7,7 @@ import plotly.express as px
 import seaborn as sns
 import json
 
-tier_list = ['all', 'challenger', 'grandmaster', 'master',
+tier_list = ['challenger', 'grandmaster', 'master',
              'diamond',  'platinum', 'gold', 'silver', 'bronze', 'iron']
 
 stats_name = ['win_rate', 'pick_rate', 'ban_rate']
@@ -53,6 +53,7 @@ def make_dataframe():
         data_dict = {}
         for d in tqdm(data):
             champion = d['name']
+
             for p in d['positions']:
                 stats_list = []
                 position = p['name']
@@ -67,11 +68,13 @@ def make_dataframe():
         df.insert(loc=0, column='tier', value=tier)
         df_list.append(df)
     df = pd.concat(df_list)
+    # 라이엇의 오타 해결
+    df.loc[df['position'] == 'ALL', ['position']] = 'ADC'
     # save df
     df.to_csv('dataframe.csv', index=False)
 
 
-# make_dataframe()
+make_dataframe()
 
 df = pd.read_csv('dataframe.csv')
 
