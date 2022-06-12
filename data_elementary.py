@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import koreanize_matplotlib
 
@@ -47,19 +48,19 @@ y5 = round(y1/y4, 1)
 # 학교수 학생수 변화 (fig_ele1)
 fig_ele1, ax1_ele1 = plt.subplots()
 
-plt.title('[초등학교] 10년간 학교수와 학생수 변화')
+plt.title('Students & Schools')
 plt.grid(False)
 
 ax1_ele1.plot(x, y2, '-s', color='red', markersize=7,
-              linewidth=5, alpha=0.6, label='학교수')
+              linewidth=5, alpha=0.6, label='Schools')
 ax1_ele1.set_ylim(6000, 6500)
-ax1_ele1.set_xlabel('연도')
-ax1_ele1.set_ylabel('학교수(개)')
+ax1_ele1.set_xlabel('Year')
+ax1_ele1.set_ylabel('Schools(units)')
 
 ax2_ele1 = ax1_ele1.twinx()
-ax2_ele1.bar(x, y1/10000, color='lightblue', width=0.4, label='학생수')
+ax2_ele1.bar(x, y1/10000, color='lightblue', width=0.4, label='Students')
 ax2_ele1.set_ylim(250, 300)
-ax2_ele1.set_ylabel('학생수(만명)')
+ax2_ele1.set_ylabel('students(10,000 Persons)')
 
 ax1_ele1.set_zorder(10)
 ax2_ele1.set_zorder(5)
@@ -72,31 +73,31 @@ ax2_ele1.legend(loc='upper right')
 # 학교당 학생수 변화(fig_ele2)
 fig_ele2, ax1_ele2 = plt.subplots()
 
-plt.title('[초등학교] 10년간 학교당 학생수 변화')
+plt.title('Students per School')
 
 ax1_ele2.plot(x, y3, '-s', color='teal', markersize=7,
-              linewidth=5, alpha=0.7, label=' 학교당 학생수(명)')
-ax1_ele2.set_xlabel('연도')
+              linewidth=5, alpha=0.7, label='Students per School(person)')
+ax1_ele2.set_xlabel('Year')
 ax1_ele2.legend()
 
 # 10년간 교원수와 학생수 그래프 (fig_ele3)
 fig_ele3, ax1_ele3 = plt.subplots()
 
-plt.title('[초등학교] 10년간 교원수와 학생수 변화', fontsize=15)
+plt.title('Students & Teachers', fontsize=15)
 plt.grid(False)
 plt.xticks(fontsize=10)
 plt.yticks(fontsize=10)
 
 ax1_ele3.plot(x, y4/10000, '-s', color='red', markersize=7,
-              linewidth=5, alpha=0.7, label='교원수')
+              linewidth=5, alpha=0.7, label='Teachers')
 ax1_ele3.set_ylim(18, 20)
-ax1_ele3.set_xlabel('연도', fontsize=12, labelpad=10)
-ax1_ele3.set_ylabel('교원수(만명)', fontsize=12, labelpad=10)
+ax1_ele3.set_xlabel('Year', fontsize=12, labelpad=10)
+ax1_ele3.set_ylabel('Teachers(Unit: 10,000 Person)', fontsize=12, labelpad=10)
 
 ax2_ele3 = ax1_ele3.twinx()
-ax2_ele3.bar(x, y1/10000, color='lightblue', width=0.4, label='학생수')
+ax2_ele3.bar(x, y1/10000, color='lightblue', width=0.4, label='Students')
 ax2_ele3.set_ylim(250, 300)
-ax2_ele3.set_ylabel('학생수(만명)', fontsize=12, labelpad=10)
+ax2_ele3.set_ylabel('Persons(Unit: 10,000 person)', fontsize=12, labelpad=10)
 plt.yticks(fontsize=10)
 
 ax1_ele3.set_zorder(10)
@@ -109,11 +110,11 @@ ax2_ele3.legend(loc='upper right')
 # 교원당 학생수 변화 그래프 (fig_ele4)
 fig_ele4, ax1_ele4 = plt.subplots()
 
-plt.title('[초등학교] 10년간 교원당 학생수 변화')
+plt.title('Students per Teacher')
 
 ax1_ele4.plot(x, y5, '-s', color='teal', markersize=7,
-              linewidth=5, alpha=0.7, label=' 교원당 학생수(명)')
-ax1_ele4.set_xlabel('연도')
+              linewidth=5, alpha=0.7, label=' Students per Teacher(Unit: Person)')
+ax1_ele4.set_xlabel('Year')
 ax1_ele4.legend()
 
 
