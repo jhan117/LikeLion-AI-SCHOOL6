@@ -1,5 +1,4 @@
 from data_elementary import *
-import koreanize_matplotlib
 
 import streamlit as st
 
