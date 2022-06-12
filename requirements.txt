@@ -2,6 +2,5 @@ pandas
 numpy
 streamlit
 plotly
-seaborn
 matplotlib
 tqdm
