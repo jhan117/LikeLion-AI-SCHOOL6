@@ -2,26 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-
-# 한글폰트 설정
-def get_font_family():
-    """
-    시스템 환경에 따른 기본 폰트명을 반환하는 함수
-    """
-    import platform
-    system_name = platform.system()
-
-    if system_name == "Darwin":
-        font_family = "AppleGothic"
-    else:
-        font_family = "Malgun Gothic"
-    return font_family
-
-
 plt.style.use('dark_background')
-plt.rc("font", family=get_font_family())
-plt.rc("axes", unicode_minus=False)
-
 
 # 초등학교 데이터 불러오기
 file_name = "data/schl_data.csv"
@@ -59,7 +40,7 @@ ax1_ele1.set_ylabel('Schools(units)')
 ax2_ele1 = ax1_ele1.twinx()
 ax2_ele1.bar(x, y1/10000, color='lightblue', width=0.4, label='Students')
 ax2_ele1.set_ylim(250, 300)
-ax2_ele1.set_ylabel('students(10,000 Persons)')
+ax2_ele1.set_ylabel('students(10,000 Person)')
 
 ax1_ele1.set_zorder(10)
 ax2_ele1.set_zorder(5)

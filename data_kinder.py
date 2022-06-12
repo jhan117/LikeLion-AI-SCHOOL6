@@ -1,48 +1,47 @@
 import pandas as pd
-from tqdm import trange
 
 
-def check_header(year):
-    if year in range(2012, 2020):
-        return 11
-    elif year == 2020:
-        return 13
-    else:
-        return 14
+# def check_header(year):
+#     if year in range(2012, 2020):
+#         return 11
+#     elif year == 2020:
+#         return 13
+#     else:
+#         return 14
 
 
-def save_parquet():
-    df_list = []
-    select_cols = ['조사기준일', '시도', '학교급', '나이스 학교 코드',
-                   '학생수_총계_계', '교원수_총계_계']
-    cols = ['연도', '시도', '학교급', '나이스 학교 코드', '학생수 총계', '교원수 총계']
+# def save_parquet():
+#     df_list = []
+#     select_cols = ['조사기준일', '시도', '학교급', '나이스 학교 코드',
+#                    '학생수_총계_계', '교원수_총계_계']
+#     cols = ['연도', '시도', '학교급', '나이스 학교 코드', '학생수 총계', '교원수 총계']
 
-    try:
-        for i in trange(2012, 2022):
-            file_path = f'data/{i}년'
+#     try:
+#         for i in trange(2012, 2022):
+#             file_path = f'data/{i}년'
 
-            # read
-            df = pd.read_excel(f'{file_path}.xlsx',
-                               header=check_header(i), engine='openpyxl')
+#             # read
+#             df = pd.read_excel(f'{file_path}.xlsx',
+#                                header=check_header(i), engine='openpyxl')
 
-            # select values
-            df = df.loc[df['학교급'] == '유치원']
-            df = df.loc[df['상태'] != '폐(원)교']
+#             # select values
+#             df = df.loc[df['학교급'] == '유치원']
+#             df = df.loc[df['상태'] != '폐(원)교']
 
-            # select columns
-            df = df.loc[:, select_cols]
-            df.columns = cols
+#             # select columns
+#             df = df.loc[:, select_cols]
+#             df.columns = cols
 
-            df_list.append(df)
+#             df_list.append(df)
 
-        # concatenate
-        concatenated_df = pd.concat(df_list)
+#         # concatenate
+#         concatenated_df = pd.concat(df_list)
 
-        # save
-        concatenated_df.to_parquet(f'data/data.parquet.gzip',
-                                   compression='gzip', index=False)
-    except:
-        raise Exception(f'{i}년 에러 발생')
+#         # save
+#         concatenated_df.to_parquet(f'data/data.parquet.gzip',
+#                                    compression='gzip', index=False)
+#     except:
+#         raise Exception(f'{i}년 에러 발생')
 
 
 def processing(df):
@@ -119,4 +118,4 @@ if __name__ == '__main__':
     # print(df.head())
     # save_parquet()
     print(df_teach_stu)
-    pass
+    # pass
