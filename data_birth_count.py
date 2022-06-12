@@ -1,6 +1,6 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
+import koreanize_matplotlib
 
 
 # 한글 에러 안 나게 넣어주기

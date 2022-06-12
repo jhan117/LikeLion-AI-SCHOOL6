@@ -4,3 +4,4 @@ streamlit
 plotly
 matplotlib
 tqdm
+koreanize_matplotlib
