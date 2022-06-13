@@ -13,7 +13,7 @@
 
 ## 수집 사이트
 
-[유치원, 초등학교 통계](https://kess.kedi.re.kr/contents/dataset)
+[유치원, 초등학교 통계](https://kess.kedi.re.kr/contents/dataset)  
 [출생수 통계](https://kosis.kr/statHtml/statHtml.do?orgId=101&tblId=INH_1B8000F_01&conn_path=I2)
 
 ## 결론
