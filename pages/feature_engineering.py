@@ -14,9 +14,9 @@ st.markdown("""**목차**
 - [days_to_year](#days-to-year)
 - [minus](#minus)
 - [remove_outlier](#remove-outlier)
-- [add_var](#add_var)
+- [add_var](#add-var)
 - [numeric_process](#numeric-process)
-- [occype_process](#occype-process)
+- [occyp_process](#occyp-process)
 - [make_bin](#make-bin)""")
 
 # == 1. days_to_year ==
