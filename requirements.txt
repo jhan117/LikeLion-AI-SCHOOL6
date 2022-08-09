@@ -5,3 +5,4 @@ Finance-datareader
 plotly
 seaborn
 matplotlib
+sklearn
