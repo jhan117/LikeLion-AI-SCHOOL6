@@ -1,0 +1,10 @@
+datasets
+streamlit
+torch
+pandas
+transformers
+albumentations
+torchvision
+tensorflow == 2.8.0
+tensorboard == 2.8.0
+streamlit==1.12.0
