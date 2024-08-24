@@ -1,0 +1,10 @@
+datasets
+streamlit
+torch
+pandas
+transformers
+albumentations
+torchvision
+tensorflow
+tensorboard
+pyparsing
